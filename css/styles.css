@@ -19,39 +19,51 @@ header {
     left: 0;
     width: 100%;
     background-color: #ffcc00;
-    padding: 10px 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 15px 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header:hover {
+    background-color: #e6b800; /* Slightly darker on hover */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allow items to wrap for smaller screens */
+    flex-wrap: wrap;
 }
 
 .navbar .logo {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     color: #000;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
 }
+
+
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 25px;
 }
 
 .navbar ul li a {
     text-decoration: none;
     color: #000;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 18px;
 }
 
 .navbar ul li a:hover {
-    color: #555;
+    color: #ffcc00;
+    transform: translateY(-5px); /* Slight lift effect on hover */
 }
 
 /* Fixed Footer */
@@ -63,14 +75,20 @@ footer {
     background-color: #111;
     color: #777;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+footer:hover {
+    background-color: #222; /* Darken footer on hover */
 }
 
 /* Cover Photo Section */
 .cover {
     background: url('cssimages/cover.jpg') no-repeat center center;
-    background-size: contain;  /* Ensure the image is fully contained without cropping */
-    height: 100vh;             /* Full viewport height */
+    background-size: cover; /* Cover image, it will scale and fill the space without cropping */
+    height: 100vh;            /* Full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,62 +99,78 @@ footer {
 
 .cover .cover-text {
     background: rgba(0, 0, 0, 0.6);
-    padding: 20px 40px;
-    border-radius: 10px;
+    padding: 30px 50px;
+    border-radius: 15px;
     width: fit-content;
+    position: absolute;
+    bottom: 30px;
 }
 
 .cover h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+    font-size: 55px;
+    margin-bottom: 15px;
     color: #ffcc00;
+    letter-spacing: 3px;
 }
 
 .cover p {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 /* Trainer Section */
 main {
-    padding: 80px 20px 60px; /* Adjust for fixed header and footer */
+    padding: 80px 20px 60px;
     text-align: center;
 }
 
 h1 {
     color: #ffcc00;
     margin-bottom: 20px;
+    font-size: 36px;
+    letter-spacing: 1.5px;
 }
 
 .trainers .trainer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
+    margin-top: 40px;
 }
 
 .trainer-card {
     background-color: #222;
     border: 2px solid #ffcc00;
-    border-radius: 10px;
-    padding: 15px;
+    border-radius: 15px;
+    padding: 20px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.trainer-card:hover {
+    transform: translateY(-10px);  /* Lift effect */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .trainer-card img {
     width: 100%;
-    height: 200px;
-    object-fit: contain;
-    border-radius: 10px;
+    height: 250px;
+    object-fit: contain; /* Ensure the image fits within the container without cropping */
+    border-radius: 15px;
     margin-bottom: 15px;
 }
 
 .trainer-card h2 {
     color: #ffcc00;
     margin-bottom: 10px;
+    font-size: 22px;
+    letter-spacing: 1px;
 }
 
 .trainer-card p {
     color: #ccc;
+    font-size: 16px;
 }
 
 /* Media Queries for Responsive Design */
@@ -144,7 +178,7 @@ h1 {
     /* Navbar adjustments for smaller screens */
     .navbar ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
         align-items: center;
     }
 
@@ -154,11 +188,11 @@ h1 {
 
     /* Adjust cover text */
     .cover h1 {
-        font-size: 36px;
+        font-size: 40px;
     }
 
     .cover p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     /* Adjust images in the trainer section */
@@ -185,7 +219,7 @@ h1 {
 
     /* Trainer cards adjustments */
     .trainer-card {
-        padding: 10px;
+        padding: 15px;
     }
 
     .trainer-card img {
