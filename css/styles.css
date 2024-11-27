@@ -123,9 +123,9 @@ h1 {
 }
 
 .trainer-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    width: 100%;   /* Make the image fully responsive */
+    height: 200px;  /* Set a fixed height for consistency */
+    object-fit: contain; /* Ensures the entire image fits without cropping */
     border-radius: 10px;
     margin-bottom: 15px;
 }
@@ -160,6 +160,13 @@ h1 {
     .cover p {
         font-size: 16px;
     }
+
+    /* Adjust images in the trainer section */
+    .trainer-card img {
+        width: 100%;
+        height: 200px; /* Keep the fixed height for consistency */
+        object-fit: contain; /* Ensure full view of the image */
+    }
 }
 
 @media (max-width: 480px) {
@@ -182,7 +189,7 @@ h1 {
     }
 
     .trainer-card img {
-        height: 150px;
+        height: 150px;  /* Smaller height on mobile */
     }
 
     .trainer-card h2 {
