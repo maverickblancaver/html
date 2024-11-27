@@ -53,16 +53,26 @@ header:hover {
     gap: 25px;
 }
 
+.navbar ul li {
+    margin: 0;
+}
+
+/* Make links look like buttons */
 .navbar ul li a {
     text-decoration: none;
-    color: #000;
+    color: #fff;
+    background-color: #ffcc00;  /* Yellow background */
     font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
     font-size: 18px;
+    display: inline-block;
 }
 
 .navbar ul li a:hover {
-    color: #ffcc00;
+    background-color: #e6b800; /* Darken background on hover */
+    color: #000;
     transform: translateY(-5px); /* Slight lift effect on hover */
 }
 
@@ -87,8 +97,8 @@ footer:hover {
 /* Cover Photo Section */
 .cover {
     background: url('cssimages/cover.jpg') no-repeat center center;
-    background-size: cover; /* Cover image, it will scale and fill the space without cropping */
-    height: 100vh;            /* Full viewport height */
+    background-size: cover;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,14 +159,14 @@ h1 {
 }
 
 .trainer-card:hover {
-    transform: translateY(-10px);  /* Lift effect */
+    transform: translateY(-10px);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .trainer-card img {
     width: 100%;
     height: 250px;
-    object-fit: contain; /* Ensure the image fits within the container without cropping */
+    object-fit: contain;
     border-radius: 15px;
     margin-bottom: 15px;
 }
@@ -198,7 +208,7 @@ h1 {
     /* Adjust images in the trainer section */
     .trainer-card img {
         width: 100%;
-        height: 200px; /* Keep the fixed height for consistency */
+        height: 200px;
         object-fit: contain;
     }
 }
